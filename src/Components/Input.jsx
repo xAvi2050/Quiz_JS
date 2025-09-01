@@ -11,6 +11,14 @@ const Input = () => {
   return (
     <>
       <div className="input">
+        <h1 style={{top: '250px',
+          position: 'absolute', 
+          fontSize: '70px', 
+          color: '#fff', 
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+          fontFamily: 'Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif',
+          textDecoration: 'underline',
+          }}>Enter your details</h1>
         <input 
         id="name" 
         type="text"

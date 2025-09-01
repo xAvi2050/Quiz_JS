@@ -198,41 +198,36 @@ const Quiz = () => {
 
   return (
     <div className="quiz">
-      <h1>{current.title}</h1>
-      <h2>{current.question}</h2>
+      <div className="quiz-container">
+        <h1>{current.title}</h1>
+        <h2>{current.question}</h2>
 
-      <div className="code">
-        <pre>
-          <code>{current.code}</code>
-        </pre>
-      </div>
+        <div className="code">
+          <pre><code>{current.code}</code></pre>
+        </div>
 
-      <div className="options">
-        {current.options.map(option => (
-          <button 
-            key={option.id} 
-            onClick={() => handleOptionClick(option.id)}
-            disabled={isAnswered}
-            className={selectedAnswers[current.Q_id] === option.id ? 'selected' : ''}
-          >
-          {option.text}
+        <div className="options">
+          {current.options.map(option => (
+            <button 
+              key={option.id} 
+              onClick={() => handleOptionClick(option.id)}
+              disabled={isAnswered}
+              className={selectedAnswers[current.Q_id] === option.id ? 'selected' : ''}
+            >
+              {option.text}
+            </button>
+          ))}
+        </div>
+
+        <div className="button-group">
+          {currentQuestionIndex > 0 && (
+            <button id="prev" onClick={handlePrev}>← Prev</button>
+          )}
+          <button id="next" onClick={handleNext}>
+            {currentQuestionIndex < questions.length - 1 ? 'Next →' : 'Finish'}
           </button>
-        ))}
+        </div>
       </div>
-
-
-      <div className='button-group'>
-        {currentQuestionIndex > 0 && (
-          <button id="prev" onClick={handlePrev}>
-            ←
-          </button>
-        )}
-        
-        <button id="next" onClick={handleNext}>
-          {currentQuestionIndex < questions.length - 1 ? '→' : 'Finish'}
-        </button>
-      </div>
-
     </div>
   );
 };

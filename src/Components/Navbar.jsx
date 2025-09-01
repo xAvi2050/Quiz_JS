@@ -5,7 +5,7 @@ import icon from '../assets/js.png';
 const Navbar = () => {
   return (
     <div className="navbar">
-      <img src={icon} alt="Logo" className="navbar-icon" />
+      <a href="/"><img src={icon} alt="Logo" className="navbar-icon" /></a>
     </div>
   );
 };
